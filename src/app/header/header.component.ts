@@ -20,7 +20,7 @@ constructor(private dataService:DataStorageService){}
 onSaveData(){
 this.dataService.storeRecipes()
 .subscribe(
-    (response)=>{
+    (response:Response)=>{
         console.log(response);
         
     }
