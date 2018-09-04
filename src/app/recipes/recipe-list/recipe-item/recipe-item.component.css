@@ -1,0 +1,8 @@
+
+.item_img{
+    cursor :pointer; padding: 15px 15px 15px 15px;font-size: 15px;font-family: cursive; border: 2px solid lightblue;
+}
+
+.img_radius{
+    max-height:50px ; border-radius: 15px;
+}

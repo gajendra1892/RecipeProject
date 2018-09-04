@@ -3,20 +3,19 @@
     <!-- <a  style="cursor :pointer"
  class="list-group-item clearfix" 
    (click)="onSelectItem()" > -->
-   <a  style="cursor :pointer"
+   <a 
    [routerLink]="[index]"
    routerLinkActive="active"
-   class="list-group-item clearfix" 
+   class="list-group-item clearfix item_img" 
      >
       <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
-        <p class="list-group-item-text">{{ recipe.description }}</p>
+        <h4 class="list-group-item-heading headings" >{{ recipe.name }}</h4>
+        <p class="list-group-item-text headings"  >{{ recipe.description }}</p>
       </div>
       <span class="pull-right">
         <img [src]="recipe.imagePath" 
         alt="{{ recipe.name }}" 
-        class="img-responsive" 
-        style="max-height:50px">
+        class="img-responsive img_radius" >
         <!-- <img src="{{ recipe.imagePath }}" 
         alt="{{ recipe.name }}" 
         class="img-responsive" 

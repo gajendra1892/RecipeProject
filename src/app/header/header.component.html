@@ -1,24 +1,27 @@
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
+    <!-- <div class="container-fluid"> -->
+            <div >
         <div class="navbar-header">
             <!-- <a href="#" class="navbar-brand">Recipe Book</a> -->
-            <a routerLink="/" class="navbar-brand">Recipe Book</a>
+            <a routerLink="/" class="navbar-brand black_heading" >Recipe Book</a>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                    <li routerLinkActive="active"><a  routerLink="/recipes">Recipes</a></li>
-                    <li routerLinkActive="active"><a [routerLink]="['shopping-list']">Shopping List</a></li>
+        <div class="collapse navbar-collapse _background" >
+            <ul class="nav navbar-nav" *ngIf="loggedIn">
+                    <li routerLinkActive="active"><a  routerLink="/recipes" class="black_heading">Recipes</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="['shopping-list']"class="black_heading">Shopping List</a></li>
                     <!-- //after routing no need of this code -->
                 <!-- <li><a href="#" (click)="OnSelect('recipe')">Recipes</a></li>
                 <li><a href="#" (click)="OnSelect('shopping-list')">Shopping List</a></li> -->
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a routerLink="/signup">Register</a></li>
-                <li class="dropdown" appDropdown>
-                        <a style="cursor:pointer;"  class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a style="cursor:pointer;" (click)="onSaveData()">Save Data</a></li>
-                            <li><a style="cursor:pointer;" (click)="onFetchData()">Fetch Data</a></li>
+              <li><a routerLinkActive="active" routerLink="/register" *ngIf="!loggedIn" class="black_heading">Register</a></li>
+              <li><a routerLinkActive="active" routerLink="/login" *ngIf="!loggedIn" class="black_heading">Login</a></li>
+              <li><a  (click)="logout()" *ngIf="loggedIn" class="black_heading pointer" >LogOut</a></li>
+                <li class="dropdown" appDropdown  *ngIf="loggedIn">
+                        <a   class="dropdown-toggle pointer" role="button" class="black_heading">Manage<span class="caret"></span></a>
+                        <ul class="dropdown-menu _background" >
+                            <li><a  (click)="onSaveData()" class="black_heading pointer">Save Data</a></li>
+                            <li><a  (click)="onFetchData()" class="black_heading pointer">Fetch Data</a></li>
                         </ul>
                     <!-- remove href to prevent the reloading of the page -->
                     <!-- <a href="#" class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>

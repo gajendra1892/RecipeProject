@@ -2,3 +2,20 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched{
     border: 1px solid red;
 }
+
+
+.margin28{
+    margin:28px ;
+}
+
+.margin20{
+    margin:20px ;
+}
+
+.margin10{
+    margin:10px ;
+}
+
+.width100{
+    width: 100% ;
+}

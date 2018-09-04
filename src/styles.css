@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+.headings{
+    font-family: cursive;
+}
+
+.black_heading{
+    color: black !important; font-family: cursive;
+}
+
+._background{
+    background-color: dimgray !important;
+}
+
+.divFieldset{
+    border: 2px solid lightblue;
+        padding: 10px;
+        margin:  20px;
+        border-radius: 10px;
+}
+
+.inputBorder{
+    border:  1px solid lightblue;
+}
+
+.btn_Margin{
+    margin-left: 280px;
+}
+
+.imgSignin{
+    height: 200px;width: 400px; border: 2px solid lightblue;border-radius: 30px;
+}
+
+
+.imgSigninBackground{
+    padding-left: 120px;margin-bottom:20px;margin-top:20px;
+}
+
+.the-legend {
+    border-style: none;
+    border-width: 0;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    width: auto;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.pointer{
+    cursor:pointer;
+}

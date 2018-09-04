@@ -8,18 +8,21 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthGuard } from './auth/auth.guards';
 
 
 const appRoutes :Routes =[
 
     {
-        path :'' ,redirectTo :'/recipes' ,pathMatch :'full'
+        // path :'' ,redirectTo :'/recipes' ,pathMatch :'full'
+        path :'' ,redirectTo :'/register' ,pathMatch :'full'
     },
     {
-        path : 'recipes',component :RecipesComponent ,children:[
+        path : 'recipes',component :RecipesComponent,canActivate:[AuthGuard] ,children:[
 
             {
-                path:'',component :RecipeStartComponent
+                path:'',component :RecipeStartComponent 
             },
             {
                 path:'new',component :RecipeEditComponent
@@ -33,14 +36,18 @@ const appRoutes :Routes =[
         ]
     },
     {
-        path :'shopping-list' ,component :ShoppingListComponent
+        path :'shopping-list' ,component :ShoppingListComponent ,canActivate:[AuthGuard]
     }
     ,
     {
-        path :'signup' ,component:SignupComponent
+        path :'register' ,component:SignupComponent
     },
     {
-        path :'**' ,redirectTo :'/recipes'
+        path :'login' ,component:SigninComponent
+    },
+    {
+        //  path :'**' ,redirectTo :'/recipes'
+        path :'**' ,redirectTo :'/register'
     }
 ];
 
